@@ -8,10 +8,8 @@ function doLogin()
 {
 let login = document.getElementById("login").value;
 let password = document.getElementById("password").value;
-
 let tmp = { login: login, password: password};
 let jsonPayload = JSON.stringify(tmp);
-
 let url = urlBase + "/userlogin.php";
 
 fetch(url, {
@@ -23,7 +21,6 @@ fetch(url, {
 })
 
 .then(response => response.text())
-
 .then(text => {
     let jsonObject = JSON.parse(text);
 
@@ -45,4 +42,5 @@ fetch(url, {
 })
 
 .catch(error => console.error(error));
+
 }
