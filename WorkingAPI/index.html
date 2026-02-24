@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Manager</title>
+    <script type="text/javascript" src="script.js"></script>
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+</head>
+<body>
+
+<h1 id="title">Contact Manager</h1>
+
+<main>
+<!-- LOGIN -->
+<div id="loginDiv" class="panel">
+    <span class="panel-title">LOG IN</span>
+    <input type="text" id="loginName" placeholder="Username" aria-label="Username" /><br />
+    <input type="password" id="loginPassword" placeholder="Password" aria-label="Password" /><br />
+    <button type="button" class="btn" onclick="doLogin();">Log In</button>
+    <span id="loginResult" class="msg"></span>
+    <p class="switch">Don't have an account? <a href="#" onclick="showRegister(); return false;">Sign Up</a></p>
+</div>
+
+<!-- REGISTER -->
+<div id="registerDiv" class="panel" style="display:none;">
+    <span class="panel-title">SIGN UP</span>
+    <input type="text" id="regFirstName" placeholder="First Name" aria-label="First Name" /><br />
+    <input type="text" id="regLastName" placeholder="Last Name" aria-label="Last Name" /><br />
+    <input type="text" id="regLogin" placeholder="Username" aria-label="Username" /><br />
+    <input type="password" id="regPassword" placeholder="Password" aria-label="Password" /><br />
+    <button type="button" class="btn" onclick="doRegister();">Sign Up</button>
+    <span id="registerResult" class="msg"></span>
+    <p class="switch">Already have an account? <a href="#" onclick="showLogin(); return false;">Log In</a></p>
+</div>
+<main>
+
+</body>
+</html>

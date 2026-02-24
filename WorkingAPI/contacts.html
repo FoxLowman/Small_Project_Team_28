@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Contact Manager</title>
+	<script type="text/javascript" src="script.js"></script>
+	<link href="styles.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+	<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		readCookie();
+		searchContacts();
+	}, false);
+	</script>
+</head>
+<body>
+
+<h1 id="title">Contact Manager</h1>
+
+<main>
+<!-- USER BAR -->
+<div class="panel topbar">
+	<span id="userName"></span>
+	<button type="button" class="btn sm" onclick="doLogout();">Log Out</button>
+</div>
+
+<!-- SEARCH -->
+<div class="panel">
+	<span class="panel-title">Search Contacts</span>
+	<input type="text" id="searchText" placeholder="Search by name..." aria-label="Search contacts" />
+	<button type="button" class="btn" onclick="searchContacts();">Search</button>
+	<span id="contactSearchResult" class="msg"></span>
+
+	<table id="contactTable" aria-label="Contact list">
+		<thead>
+			<tr>
+				<th>First</th>
+				<th>Last</th>
+				<th>Phone</th>
+				<th>Email</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody id="contactTableBody"></tbody>
+	</table>
+</div>
+
+<!-- ADD CONTACT -->
+<div class="panel">
+	<span class="panel-title">Add Contact</span>
+	<input type="text" id="addFirstName" placeholder="First Name" aria-label="First Name" /><br />
+	<input type="text" id="addLastName" placeholder="Last Name" aria-label="Last Name" /><br />
+	<input type="text" id="addPhone" placeholder="Phone" aria-label="Phone" /><br />
+	<input type="text" id="addEmail" placeholder="Email" aria-label="Email" /><br />
+	<button type="button" class="btn" onclick="addContact();">Add</button>
+	<span id="contactAddResult" class="msg"></span>
+</div>
+
+<!-- EDIT MODAL -->
+<div id="editModal" role="dialog" aria-label="Edit contact" style="display:none;">
+	<div class="modal-box">
+		<span class="panel-title">Edit Contact</span>
+		<input type="hidden" id="editId" />
+		<input type="text" id="editFirstName" placeholder="First Name" aria-label="First Name" /><br />
+		<input type="text" id="editLastName" placeholder="Last Name" aria-label="Last Name" /><br />
+		<input type="text" id="editPhone" placeholder="Phone" aria-label="Phone" /><br />
+		<input type="text" id="editEmail" placeholder="Email" aria-label="Email" /><br />
+		<button type="button" class="btn" onclick="saveEdit();">Save</button>
+		<button type="button" class="btn cancel" onclick="closeEdit();">Cancel</button>
+		<span id="editResult" class="msg"></span>
+	</div>
+</div>
+<main>
+
+</body>
+</html>
